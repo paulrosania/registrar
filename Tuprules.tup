@@ -1,0 +1,10 @@
+export DOCKER_HOST
+export DOCKER_TLS_VERIFY
+export DOCKER_CERT_PATH
+export GOPATH
+
+ROOT = $(TUP_CWD)
+
+!go = |> ^ go build %o (linux/amd64)^ GOOS=linux GOARCH=amd64 $(ROOT)/util/_toolchain/go/bin/go build -o %o |>
+!docker = |> ^ docker build %d^ docker build -t quay.io/paulrosania/%d . | tee %o |> $(ROOT)/log/docker-%d.log
+!cp = |> cp %f %o |>

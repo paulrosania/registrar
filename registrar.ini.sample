@@ -1,0 +1,19 @@
+[server]
+base-url = "https://api.example.com"
+bind = ":8080"
+
+[open-id]
+issuer = "https://example.com"
+
+[jwt]
+public-key = "/etc/registrar/keys/registrar.rsa.pub"
+private-key = "/etc/registrar/keys/registrar.rsa"
+
+[database]
+protocol = "tcp"
+host = "0.0.0.0"
+port = 5432
+user = "postgres"
+password =
+database = "registrar_development"
+sslmode = "disable"
