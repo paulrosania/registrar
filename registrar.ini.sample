@@ -1,6 +1,6 @@
 [server]
 base-url = "https://api.example.com"
-bind = ":8080"
+bind = ":80"
 
 [open-id]
 issuer = "https://example.com"
