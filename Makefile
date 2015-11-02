@@ -6,7 +6,7 @@ clean:
 toolchain: util/_toolchain/go/bin/go
 
 util/_toolchain/go/bin/go: util/_toolchain/bin/gonative
-	cd util/_toolchain && rm -rf go && GOROOT_BOOTSTRAP=$$GOROOT bin/gonative build -version=1.5.1 && ls | grep -v "^\(bin\|go\)$$" | xargs rm -r
+	cd util/_toolchain && rm -rf go && GOROOT_BOOTSTRAP=$$(go env GOROOT) bin/gonative build -version=1.5.1 && ls | grep -v "^\(bin\|go\)$$" | xargs rm -r
 
 
 util/_toolchain/bin/gonative:
